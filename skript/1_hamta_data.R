@@ -84,5 +84,5 @@ hamta_data_webbrapport <- function(
 hamta_data_webbrapport(
   repo_namn = "uppfoljning_strategier_planer",
   uppdatera_data = uppdatera_data,
-  spara_diagram_som_bildfiler = FALSE
+  spara_diagram_som_bildfiler = spara_figurer
 )
