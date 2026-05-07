@@ -47,7 +47,6 @@ if(uppdatera_data == TRUE){
       
       andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
       andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
-    
   })
 
   # Sparar global environment i R. Detta för att man skall slippa hämta data varje gång
