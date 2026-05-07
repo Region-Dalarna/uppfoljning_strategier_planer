@@ -6,7 +6,8 @@ knitta_webbrapport <- function(
   
   if (!require("pacman")) install.packages("pacman")
   p_load(here,
-         stringr)
+         stringr,
+         glue)
   
   if (is.null(repo_namn) & !is.null(rstudioapi::getActiveProject())) {
     repo_lokal_sokvag <- here()

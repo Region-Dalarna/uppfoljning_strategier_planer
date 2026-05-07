@@ -33,6 +33,26 @@ options(dplyr.summarise.inform = FALSE)
 
 ```
 
+```{js}
+const debounce = (fn) => {
+  let frame;
+  return (...params) => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => fn(...params));
+  };
+};
+
+const storeScroll = () => {
+  const threshold = 150; // px
+  const scrolled = window.scrollY > threshold;
+
+  document.documentElement.dataset.scroll = scrolled ? 'scrolled' : 'top';
+};
+
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+storeScroll();
+
+```
 <p style = "font-size:12px">
 <i>Rapporten är skapad av Samhällsanalys, Region Dalarna<br>
 Senast uppdaterad: `r Sys.Date()`</i>
