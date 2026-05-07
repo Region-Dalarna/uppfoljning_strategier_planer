@@ -94,10 +94,6 @@ gg_skogsmark$areal_skyddad_skogsmark_Dalarna
 Lite text
 
 # Och så en huvudrubrik
-Här ser vi hur man gör en länk: På nationell nivå har SCB jämfört den standardvägda lönen, dvs. lönen när hänsyn tas 
-till bland annat ålder och utbildningsnivå, för att synliggöra om det kan finnas en diskrimineringsaspekt i lönenivån. 
-Slutsatsen blev att kvinnors standardvägda lön är ungefär 95 procent av männens standardvägda lön, det vill säga det
-finns en oförklarad löneskillnad mellan kvinnor och män [(SCB)](<https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/loner-och-arbetskostnader/lonestrukturstatistik-hela-ekonomin/pong/tabell-och-diagram/kvinnors-lon-i-procent-av-mans-lon-efter-sektor>)_blank.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"}
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
