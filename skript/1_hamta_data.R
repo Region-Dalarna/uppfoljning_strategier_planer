@@ -8,20 +8,20 @@
 # 2: Uppdatera data - sätt variabeln uppdatera_data till TRUE. Då uppdateras data, alla figurer skapas på nytt och en ny enviroment sparas.
 # Tar längre tid (ett par minuter) och medför en risk att text inte längre är aktuell då figurer har uppdaterats med nya data.
 
-uppdatera_data = TRUE
-spara_figurer = TRUE
+uppdatera_data = FALSE
+spara_figurer = FALSE
+
+if (!require("pacman")) install.packages("pacman")
+p_load(tidyverse,
+       here,
+       glue)
+
+mapp_environment_fil = "g:/skript/projekt/environments/" # OBS: Får ej ändras
+repo_namn = "uppfoljning_strategier_planer" # OBS: Får ej ändras
 
 if(uppdatera_data == TRUE){
-    
-  if (!require("pacman")) install.packages("pacman")
-  p_load(tidyverse,
-         here,
-         glue)
   
     output_mapp_figur = here("figurer","/")
-
-    mapp_environment_fil = "g:/skript/projekt/environments/"
-    repo_namn = "uppfoljning_strategier_planer" # OBS: Får ej ändras
     
     source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R", encoding = "utf-8", echo = FALSE)
     

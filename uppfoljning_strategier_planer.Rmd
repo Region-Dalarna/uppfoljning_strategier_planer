@@ -17,7 +17,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, fig.height=5, fig.width=8, fig.align='center')
 
 # Nödvändiga paket
 if (!require('pacman')) install.packages('pacman')
