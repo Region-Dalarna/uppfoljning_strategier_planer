@@ -27,3 +27,5 @@ knitta_webbrapport <- function(
     envir = parent.frame()
   )
 } # slut funktion
+
+knitta_webbrapport(repo_namn = "uppfoljning_strategier_planer")
