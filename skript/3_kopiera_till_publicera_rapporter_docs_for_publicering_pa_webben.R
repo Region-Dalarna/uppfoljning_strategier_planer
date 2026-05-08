@@ -1,4 +1,4 @@
-
+# Ctrl+A följt av ctrl+enter för att kopiera html-fil till publicera rapporter
 kopiera_till_publicera_rapporter_docs <- function(
     repo_namn = NULL, 
     github_lokal_sokvag = "c:/gh/",
@@ -27,3 +27,5 @@ file.copy(from = paste0(senaste_html_filen), to = paste0(publicera_rapporter_sok
 
 
 } # slut funktion
+
+kopiera_till_publicera_rapporter_docs(repo_namn = "uppfoljning_strategier_planer")
