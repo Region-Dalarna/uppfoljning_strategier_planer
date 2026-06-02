@@ -111,6 +111,7 @@ Uppföljning av strategin prioriterar 10 indikatorer under 2026.
 
 ton CO₂e (SCB, Nationella emissionsdatabasen)
 
+
 ## Konsumtionsbaserade utsläpp
 
 ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
@@ -154,7 +155,6 @@ GWh per år (SCB, Energimyndigheten)
 
 BRP per ton utsläpp CO₂e(SCB, Energimyndigheten)
 
-**Energieffektivitet**
 
 Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta utsläppen som genereras i länet i relation till de ekonomiska värden som produceras med energin. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. 
 
@@ -197,11 +197,6 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 gg_avfall$avfall_Dalarna
 ```
 
-## Underrubrik igen
-Lite text
-
-## Underrubrik igen
-Lite text
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
 
