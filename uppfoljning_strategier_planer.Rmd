@@ -77,7 +77,8 @@ Här ska vi ha en sammanfattning av rapporten. Det ska vara en punktlista med de
 
 Här kommer en introduktion till rapporten. Det ska vara en kort text som förklarar vad rapporten handlar om och vad läsaren kan förvänta sig att hitta i rapporten.
 
-# Första avsnittet
+# Innovationsstrategin
+
 Här kommer första avsnittet. 
 
 ## Första avsnittets första underrubrik
@@ -102,7 +103,134 @@ gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ## Underrubrik igen
 Lite text
 
-# Huvudrubrik
+# Energi- och klimatstrategin
+Uppföljning av strategin prioriterar följande indikatorer under 2026.
+
+
+## Totala växthusgasutsläpp
+
+ton CO₂e (SCB, Nationella emissionsdatabasen)
+
+## Konsumtionsbaserade utsläpp
+
+ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
+
+## Utsläpp av växthusgaser per sektor 
+
+(industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
+
+
+
+År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+
+De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
+
+I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att utsläppen minskade tydligt under pandemiåret 2020, rimligtvis för att produktionstakten saktade in, men ökade år 2021. Sedan år 2021 har utsläppen återigen minskat och var år 2023 på den lägsta nivån sedan åtminstone 2005. Minskningen mellan 2022 och 2023 var dock liten och ska utsläppsmålen uppnås krävs en betydligt snabbare minskningstakt.  
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp$utslapp_bransch_Dalarna
+```
+
+Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r utslapp_min_ar_per_person` ton/invånare år `r utslapp_min_ar`  till ungefär `r utslapp_max_ar_per_person` ton/invånare år `r utslapp_max_ar`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045, vilket innebär en minskning om ungefär `r behovd_minskning` procent årligen mellan `r utslapp_max_ar` och 2045. Som jämförelse minskade utsläppen per person i Dalarna med ungefär `r forandring_sedan_2015` procent per år mellan 2015 och `r utslapp_max_ar`. Även om vi ser en utveckling i rätt riktning kommer det således att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 i enlighet med den nationella målsättningen.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp$utslapp_per_capita_Dalarna
+```
+
+
+
+## Energiproduktion och energianvändning
+
+GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
+
+
+
+## Elproduktion och elanvändning, 
+
+GWh per år (SCB, Energimyndigheten)
+
+
+## Energieffektivitet 
+
+BRP per ton utsläpp CO₂e(SCB, Energimyndigheten)
+
+**Energieffektivitet**
+
+Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta utsläppen som genereras i länet i relation till de ekonomiska värden som produceras med energin. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. 
+
+I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare.
+
+Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat, då de flesta andra länder har en svagare miljölagstiftning än Sverige.
+
+Mellan `r energieffektivitet_min_ar` och `r energieffektivitet_max_ar` ökade energieffektiviteten i ekonomiska termer i Dalarna med ca `r energieffektivitet_forandring_procent` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_energieffektivitet$energieffektivitet_Dalarna
+```
+
+I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre halvan av intervallet tillsammans med regioner som också är mer glest befolkade och har tunga industrier.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_energieffektivitet$energieffektivitet_alla_lan
+```
+
+## Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
+
+Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
+
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: Kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  48 resor per person och år 2010 till knappt `r resande_per_person_max_ar_varde ` resor år `r resande_per_person_max_ar`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2024 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 122 resor per person och år. I Stockholm där flest resor sker, görs 306 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_kollektivt_resande$resor_per_invanare_Dalarna
+```
+
+Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Efter ett antal år av ökande marknadsandel för kollektivtrafiken bröts uppgången år 2020 av en förmodad pandemieffekt. Nedgången fortsatte år 2021 när marknadsandelen för kollektivtrafik bara var `r resande_marknadsandel_2021` procent. Därefter ökade marknadsandelen under ett par år, innan den minskade igen år `r resande_marknadsandel_max_ar`. Sett över hela tidsperioden `r resande_marknadsandel_min_ar` till `r resande_marknadsandel_max_ar` har marknadsandelen för kollektivtrafik `r okning_minskning_marknadsandel_klartext` med `r forandring_marknadsandel` procentenhet, från `r resande_marknadandel_min_ar_varde` procent år `r resande_marknadsandel_min_ar`  till `r resande_marknadsandel_max_ar_varde` procent år `r resande_marknadsandel_max_ar`. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_kollektivt_resande$marknadsandel_resande_Dalarna
+```
+## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
+
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_avfall$avfall_Dalarna
+```
+
+## Underrubrik igen
+Lite text
+
+## Underrubrik igen
+Lite text
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+
+
+# Livsmedelsstrategin
+Lite text
+
+## Underrubrik igen
+Lite text
+
+## Underrubrik igen
+Lite text
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+
+# Tillgänglighetsstrategin
+
+Lite text
+
+## Underrubrik igen
+Lite text
+
+## Underrubrik igen
+Lite text
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+
+
+# Kompetensplanen
 Lite text
 
 ## Underrubrik igen
