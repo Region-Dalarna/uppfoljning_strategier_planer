@@ -172,4 +172,6 @@ energieffektivitet_max_ar <- max(energieffektivitet_df$År)
 energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter(Region == "Dalarna", År == max(År)) %>% .$value/energieffektivitet_df %>% filter(Region == "Dalarna", År == min(År)) %>% .$value-1)*100,0)
 
 
-
+}else{
+  load("G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
+}
