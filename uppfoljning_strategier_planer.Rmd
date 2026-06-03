@@ -91,7 +91,7 @@ Testdiagram som inte nödvändigtvis är med i rapporten
 gg_skogsmark$areal_skyddad_skogsmark_Dalarna
 ```
 
-## Här kommer en underrubrik till
+## Kultur- och bildningsplanen
 Lite text
 
 # Och så en huvudrubrik
@@ -107,16 +107,9 @@ Lite text
 Uppföljning av strategin prioriterar 10 indikatorer under 2026.
 
 
-## Totala växthusgasutsläpp
+## Totala växthusgasutsläpp och per sektor
 
 ton CO₂e (SCB, Nationella emissionsdatabasen)
-
-
-## Konsumtionsbaserade utsläpp
-
-ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
-
-## Utsläpp av växthusgaser per sektor 
 
 (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
 
@@ -136,6 +129,22 @@ Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utslapp$utslapp_per_capita_Dalarna
+```
+
+
+
+## Konsumtionsbaserade utsläpp
+
+ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
+
+Flytta hit avfall som nästa avsnitt.
+
+## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
+
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_avfall$avfall_Dalarna
 ```
 
 
@@ -189,13 +198,7 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kollektivt_resande$marknadsandel_resande_Dalarna
 ```
-## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
 
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_avfall$avfall_Dalarna
-```
 
 
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
