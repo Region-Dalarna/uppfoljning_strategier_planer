@@ -91,10 +91,10 @@ Testdiagram som inte nödvändigtvis är med i rapporten
 gg_skogsmark$areal_skyddad_skogsmark_Dalarna
 ```
 
-## Kultur- och bildningsplanen
+## en underrubrik
 Lite text
 
-# Och så en huvudrubrik
+# Kultur- och bildningsplanen
 Testdiagram som inte nödvändigtvis är med i rapporten
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"}
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
@@ -104,7 +104,7 @@ gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 Lite text
 
 # Energi- och klimatstrategin
-Uppföljning av strategin prioriterar 10 indikatorer under 2026.
+Uppföljning av strategin sker genom 9 indikatorer under 2026.
 
 
 ## Totala växthusgasutsläpp och per sektor
