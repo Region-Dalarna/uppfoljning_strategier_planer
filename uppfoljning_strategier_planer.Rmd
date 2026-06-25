@@ -79,7 +79,10 @@ Här kommer en introduktion till rapporten. Det ska vara en kort text som förkl
 
 # Innovationsstrategin
 
-Här kommer första avsnittet. 
+Här kommer första avsnittet.
+
+Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
+
 
 ## Första avsnittets första underrubrik
 Här är det första avsnittets första underrubrik
@@ -100,11 +103,21 @@ Testdiagram som inte nödvändigtvis är med i rapporten
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ```
 
+Här kommer första avsnittet.
+
+Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
+
+
 ## Underrubrik igen
 Lite text
 
 # Energi- och klimatstrategin
-Uppföljning av strategin sker genom 9 indikatorer under 2026.
+Uppföljning av strategin sker genom 8 indikatorer i 7 avsnitt under 2026.
+
+Här kommer första avsnittet.
+
+Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
+
 
 
 ## Totala växthusgasutsläpp och per sektor
