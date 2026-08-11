@@ -112,23 +112,30 @@ Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskap
 Lite text
 
 # Energi- och klimatstrategin
-Uppföljning av strategin sker genom 8 indikatorer i 7 avsnitt under 2026.
 
-Här kommer första avsnittet.
+Detta är en sammanställning av de indikatorer som har valts inom arbetet med Energi- och klimatstrategin för Dalarna. Indikatorerna beskriver utvecklingen på samhällsnivå inom områden som bedömts vara viktiga för omställningen och ger en bild av hur läget förändras över tid. Samtidigt kan indikatorerna inte på egen hand visa vilken betydelse strategin har haft för utvecklingen. Uppföljningen kompletteras därför med en översikt av ett urval genomförda aktiviteter och insatser. Forskning om utvärdering och styrning visar att bedömningar av en strategis effekter kräver en bredare analys där resultat, genomförande, omvärldsfaktorer och samband mellan olika åtgärder vägs samman. Med längre tidsintervall behöver därför fördjupade analyser genomföras för att bedöma strategins bidrag till utvecklingen i länet. Energi- och klimatomställningen är dessutom nära sammanlänkad med ekologisk, social och ekonomisk hållbarhet, vilket innebär att utvecklingen inom ett område både påverkar och påverkas av utvecklingen inom andra.
 
-Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
+Uppföljning av strategin sker genom följande åtta indikatorer fördelade på sju avsnitt.
 
+• Totala växthusgasutsläpp, ton CO₂e (SCB, Nationella emissionsdatabasen)
+• Konsumtionsbaserade utsläpp, ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
+• Utsläpp av växthusgaser per sektor (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
+• Energiproduktion och energianvändning, GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
+• Elproduktion och elanvändning, GWh per år (SCB, Energimyndigheten)
+• Energieffektivitet; BRP per ton utsläpp CO₂e (SCB, Energimyndigheten)
+• Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
+• Mängd insamlat kommunalt avfall per person (SCB, Kolada)
+
+
+<!--Första avsnittet skulle också kunna beskriva strategisk samverkanslogiken och kunskapsläget utifrån "verktygen"...
+-->
 
 
 ## Totala växthusgasutsläpp och per sektor
 
-ton CO₂e (SCB, Nationella emissionsdatabasen)
+ton CO₂e (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
 
-(industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
-
-
-
-År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+Utsläppen av växthusgaser är i huvudsak en följd av samhällets användning av fossila bränslen och är den grundläggande orsaken till den pågående klimatförändringen. Målen i Dalarna ligger i linje med de nationella klimatmålen, med sikte på nettonollutsläpp senast 2045. Samtidigt är det inte bara målåret som är avgörande, utan även hur snabbt utsläppen minskar på vägen dit. Eftersom klimatpåverkan beror på den samlade mängden växthusgaser som släpps ut över tid kan tidiga utsläppsminskningar ge större nytta än motsvarande minskningar längre fram. Ur ett klimatbudgetperspektiv är därför den totala mängden utsläpp fram till måluppfyllelse minst lika viktig som att nå själva slutmålet.
 
 De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
 
@@ -150,23 +157,24 @@ gg_utslapp$utslapp_per_capita_Dalarna
 
 ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
 
-Flytta hit avfall som nästa avsnitt.
+De utsläpp som sker inom Dalarnas gränser speglar inte hela länets klimatpåverkan. En del av utsläppen är kopplade till produktion av varor och tjänster som exporteras och används på andra platser. Samtidigt ger vår konsumtion upphov till utsläpp i andra delar av Sverige och världen, där de varor och tjänster vi använder produceras. För att få en mer heltäckande bild av klimatpåverkan behöver utsläppen därför också betraktas ur ett konsumtionsperspektiv – det vill säga de utsläpp som orsakas av våra val och vår efterfrågan, oavsett var i världen de faktiskt sker.
 
 ## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
 
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
+Mängden kommunalt avfall per person är en indikator på hur effektivt samhället använder sina resurser. En minskad avfallsmängd kan tyda på förändrade konsumtionsmönster, ökad återanvändning och längre livslängd på produkter, medan ökande avfallsmängder ofta innebär ett större uttag av råvaror och högre belastning på klimat och miljö. Indikatorn fångar därmed en viktig del av omställningen till ett mer resurseffektivt och cirkulärt samhälle. Även om avfallshanteringen i sig påverkar klimatet är indikatorns främsta värde att den speglar den underliggande konsumtion som driver både materialanvändning, energibehov och utsläpp av växthusgaser, i Dalarna och globalt.
+
+I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_avfall$avfall_Dalarna
 ```
 
 
-
 ## Energiproduktion och energianvändning
 
 GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
 
-
+Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
 ## Elproduktion och elanvändning, 
 
@@ -176,6 +184,11 @@ GWh per år (SCB, Energimyndigheten)
 ## Energieffektivitet 
 
 BRP per ton utsläpp CO₂e(SCB, Energimyndigheten)
+
+En mer effektiv användning av energi är en av de mest kostnadseffektiva vägarna i energi- och klimatomställningen. Trots teknisk utveckling finns fortfarande betydande potential att minska energislöseri i byggnader, transporter och industri. Genom att använda energi smartare kan samma eller högre värde skapas med mindre resursinsats. Indikatorn BRP per ton koldioxidutsläpp beskriver hur väl ekonomiskt värdeskapande frikopplas från klimatpåverkan. En ökande kvot innebär att länets ekonomi utvecklas samtidigt som utsläppen minskar, vilket är ett tecken på ökad resurs- och energieffektivitet. Att skapa mer välfärd och ekonomiskt värde med lägre energianvändning och mindre klimatpåverkan är en central del av omställningen till ett konkurrenskraftigt och hållbart samhälle.
+
+
+Elektrifieringen är en av de viktigaste drivkrafterna i energi- och klimatomställningen. För att minska utsläppen behöver fossila bränslen i transportsektorn, industrin och delar av uppvärmningen ersättas med el eller andra fossilfria energibärare. Detta medför en snabbt växande efterfrågan på el, samtidigt som kraven på ett robust och flexibelt elsystem ökar. Utvecklingen av både elanvändning och elproduktion är därför central att följa. En hög grad av regional elproduktion bidrar till att stärka försörjningstryggheten, minska sårbarheten och skapa bättre förutsättningar för att möta framtidens elbehov. Att Dalarna kan vara, och fortsätta vara, en region med en hög grad av självförsörjning på el är därför betydelsefullt både för omställningen och för länets långsiktiga utveckling.
 
 
 Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta utsläppen som genereras i länet i relation till de ekonomiska värden som produceras med energin. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. 
@@ -197,6 +210,9 @@ gg_energieffektivitet$energieffektivitet_alla_lan
 ```
 
 ## Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
+
+Transportsektorn står för en betydande del av utsläppen av växthusgaser, och personbilstrafiken utgör den största delen av dessa utsläpp. Elektrifieringen av fordonsflottan är en viktig och nödvändig del av omställningen, men för att minska klimatpåverkan, energianvändningen och trängseln i transportsystemet behöver även beroendet av bilen minska. Kollektivtrafiken spelar därför en central roll genom att erbjuda ett mer transporteffektivt sätt att förflytta människor. Ett ökat kollektivresande kan bidra till minskade utsläpp, ett effektivare nyttjande av infrastruktur och bättre tillgänglighet för fler grupper i samhället. Indikatorn ger därmed en bild av utvecklingen mot ett mer hållbart transportsystem, där resbehov kan tillgodoses med lägre resursanvändning och klimatpåverkan. 
+
 
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
