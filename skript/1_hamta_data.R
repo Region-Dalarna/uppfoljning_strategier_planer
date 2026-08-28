@@ -49,21 +49,9 @@ if(uppdatera_data == TRUE){
       andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
   })
 
-  # Sparar global environment i R. Detta för att man skall slippa hämta data varje gång
-  save.image(file = glue("{mapp_environment_fil}{repo_namn}.RData"))
-  
-  end_time <- Sys.time()
-  elapsed_time <- as.numeric(difftime(end_time, start_time, units = "mins"))
-  cat(sprintf("Hämtning av data klar: Det tog %.2f minuter.", elapsed_time))
-  cat("\n\n")
-    
-    
-  } else {
-    load(glue("{mapp_environment_fil}{repo_namn}.RData"))
-  }
 
 ## Kollektivt resande
-source(here("Skript","diagram_kollektivt_resande.R"))
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_kollektivt_resande.R")
 gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,
@@ -89,7 +77,7 @@ okning_minskning_marknadsandel_klartext <- ifelse(resande_marknadsandel_df %>% f
 forandring_marknadsandel <- abs(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value -resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value)
 
 ## Avfall
-source(here("Skript","diagram_avfall.R"))
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/avfall_ny.R")
 gg_avfall <- diagram_avfall(region_vekt = "20",
                             output_mapp = output_mapp_figur,
                             returnera_data = TRUE,
@@ -109,7 +97,7 @@ avfall_brp_min_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar ==
 avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == max(ar)) %>%  .$avfallbrp,10),big.mark = " ")
 
 ## Utsläpp
-source(here("Skript","diagram_vaxthusgaser.R"))
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/utslapp.R")
 gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
                                    output_mapp = output_mapp_figur,
                                    diag_bransch = TRUE,
@@ -134,8 +122,17 @@ ar_sedan_2015 <- as.integer(max(vaxthusgaser_df$ar))-2015
 
 forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_2015) - 1) * 100),0)
 
-## Energiproduktion
-source(here("Skript","diagram_energiproduktion.R"))
+## Energiproduktion och användning
+
+#produktion av energi: Kommunal och regional energistatistik https://www.scb.se/hitta-statistik/statistik-efter-amne/energi/energibalanser/kommunal-och-regional-energistatistik/
+
+#slutanvändning av energi: https://kolada.se/verktyg/fri-sokning/?kpis=95014&years=30203,30202,30201&municipals=27508&rows=municipal,kpi&visualization=&focus=27508
+
+
+
+
+## El-produktion
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/energiproduktion.R")
 gg_energiproduktion <- diagram_energiproduktion(region = "20",
                                                 output_mapp = output_mapp_figur,
                                                 returnera_data = TRUE,
@@ -156,8 +153,26 @@ elproduktion_sol_max_ar <- format(plyr::round_any(elproduktion_df %>% filter(var
 
 solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variabel_kort == "Solkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde/elproduktion_df %>% filter(variabel_kort == "Totalt",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde)*100,1))
 
+
+## Självförsörjning av el
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_sjalvforsorjning.R")
+gg_sjalvforsorjning <- diagram_sjalvforsorjning(region_vekt = "20",
+                                                output_mapp = output_mapp_figur,
+                                                diag_livsmedel = TRUE,
+                                                diag_el = TRUE,
+                                                returnera_data = TRUE,
+                                                ggobjektfilnamn_utan_tid = TRUE,
+                                                spara_figur = spara_figurer)
+
+# El
+sjalvforsorjning_el_min_ar <- min(sjalvforsorjning_el_df$ar)
+sjalvforsorjning_el_min_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == min(ar)) %>% .$sjalvforsorjning,0)
+sjalvforsorjning_el_max_ar <- max(sjalvforsorjning_el_df$ar)
+sjalvforsorjning_el_max_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == max(ar)) %>% .$sjalvforsorjning,0)
+
+
 ## Energieffektivitet
-source(here("Skript","diagram_energieffektivitet.R"))
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/energieffektivitet.R")
 gg_energieffektivitet <- diagram_energieffektivitet(region = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,
@@ -171,7 +186,16 @@ energieffektivitet_max_ar <- max(energieffektivitet_df$År)
 
 energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter(Region == "Dalarna", År == max(År)) %>% .$value/energieffektivitet_df %>% filter(Region == "Dalarna", År == min(År)) %>% .$value-1)*100,0)
 
+# Sparar global environment i R. Detta för att man skall slippa hämta data varje gång
+save.image(file = glue("{mapp_environment_fil}{repo_namn}.RData"))
 
-}else{
-  load("G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
+end_time <- Sys.time()
+elapsed_time <- as.numeric(difftime(end_time, start_time, units = "mins"))
+cat(sprintf("Hämtning av data klar: Det tog %.2f minuter.", elapsed_time))
+cat("\n\n")
+
+
+} else {
+  load(glue("{mapp_environment_fil}{repo_namn}.RData"))
 }
+

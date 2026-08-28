@@ -77,54 +77,66 @@ Här ska vi ha en sammanfattning av rapporten. Det ska vara en punktlista med de
 
 Här kommer en introduktion till rapporten. Det ska vara en kort text som förklarar vad rapporten handlar om och vad läsaren kan förvänta sig att hitta i rapporten.
 
-# Innovationsstrategin
+<!-- # Innovationsstrategin -->
 
-Här kommer första avsnittet.
+<!-- Här kommer första avsnittet. -->
 
-Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
-
-
-## Första avsnittets första underrubrik
-Här är det första avsnittets första underrubrik
-
-## Första avsnittets andra underrubrik
-Testdiagram som inte nödvändigtvis är med i rapporten
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"}
-gg_skogsmark$areal_skyddad_skogsmark_Dalarna
-```
-
-## en underrubrik
-Lite text
-
-# Kultur- och bildningsplanen
-Testdiagram som inte nödvändigtvis är med i rapporten
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"}
-gg_skogsmark$andel_skyddad_skogsmark_Dalarna
-```
-
-Här kommer första avsnittet.
-
-Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"...
+<!-- Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"... -->
 
 
-## Underrubrik igen
-Lite text
+<!-- ## Första avsnittets första underrubrik -->
+<!-- Här är det första avsnittets första underrubrik -->
+
+<!-- ## Första avsnittets andra underrubrik -->
+<!-- Testdiagram som inte nödvändigtvis är med i rapporten -->
+
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"} -->
+<!-- gg_skogsmark$areal_skyddad_skogsmark_Dalarna -->
+<!-- ``` -->
+
+<!-- ## en underrubrik -->
+<!-- Lite text -->
+
+<!-- # Kultur- och bildningsplanen -->
+<!-- Testdiagram som inte nödvändigtvis är med i rapporten -->
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align="center"} -->
+<!-- gg_skogsmark$andel_skyddad_skogsmark_Dalarna -->
+<!-- ``` -->
+
+<!-- Här kommer första avsnittet. -->
+
+<!-- Första avsnittet skulle kunna beskriva strategisk samverkanslogiken och kunskapsläget utfrån "verktygen"... -->
+
+
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
 # Energi- och klimatstrategin
+
+Det övergripande målet för Dalarnas energi- och klimatstrategiska arbete är att skapa förutsättningar för hållbar utveckling på regional och lokal nivå, och därigenom bidra till att de nationella energi- och klimatmålen uppnås. I strategin finns mål, aktiviteter och indikatorer angivna. Denna rapport visar på förändringen över tid för strategins utvalda indikatorer.  Samtidigt kan indikatorerna inte på egen hand visa vilken betydelse strategin har haft för utvecklingen. Uppföljningen kompletteras därför med en översikt av ett urval genomförda aktiviteter och insatser. Forskning om utvärdering och styrning visar att bedömningar av en strategis effekter kräver en bredare analys där resultat, genomförande, omvärldsfaktorer och samband mellan olika åtgärder vägs samman.  Med längre intervall behöver därför fördjupade analyser genomföras för att bedöma strategins bidrag till utvecklingen i länet. Energi- och klimatomställningen är dessutom nära sammanlänkad med ekologisk, social och ekonomisk hållbarhet, vilket innebär att utvecklingen inom ett område både påverkar och påverkas av utvecklingen inom andra.
+
+Arbetet med att genomföra Energi- och klimatstrategin bedrivs inom samverkans nätverket Energiintelligent Dalarna. Energiintelligent samlar aktörer inom energi- och klimatarbetet för att kunna växla upp arbetet mot våra energi- och klimatmål.
 
 Detta är en sammanställning av de indikatorer som har valts inom arbetet med Energi- och klimatstrategin för Dalarna. Indikatorerna beskriver utvecklingen på samhällsnivå inom områden som bedömts vara viktiga för omställningen och ger en bild av hur läget förändras över tid. Samtidigt kan indikatorerna inte på egen hand visa vilken betydelse strategin har haft för utvecklingen. Uppföljningen kompletteras därför med en översikt av ett urval genomförda aktiviteter och insatser. Forskning om utvärdering och styrning visar att bedömningar av en strategis effekter kräver en bredare analys där resultat, genomförande, omvärldsfaktorer och samband mellan olika åtgärder vägs samman. Med längre tidsintervall behöver därför fördjupade analyser genomföras för att bedöma strategins bidrag till utvecklingen i länet. Energi- och klimatomställningen är dessutom nära sammanlänkad med ekologisk, social och ekonomisk hållbarhet, vilket innebär att utvecklingen inom ett område både påverkar och påverkas av utvecklingen inom andra.
 
 Uppföljning av strategin sker genom följande åtta indikatorer fördelade på sju avsnitt.
 
-• Totala växthusgasutsläpp, ton CO₂e (SCB, Nationella emissionsdatabasen)
-• Konsumtionsbaserade utsläpp, ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
-• Utsläpp av växthusgaser per sektor (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
-• Energiproduktion och energianvändning, GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
-• Elproduktion och elanvändning, GWh per år (SCB, Energimyndigheten)
-• Energieffektivitet; BRP per ton utsläpp CO₂e (SCB, Energimyndigheten)
-• Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
-• Mängd insamlat kommunalt avfall per person (SCB, Kolada)
+<li> Totala växthusgasutsläpp, ton CO₂e </li>
+
+<li> Konsumtionsbaserade utsläpp, ton CO₂e/invånare.</li>
+    
+<li> Utsläpp av växthusgaser per sektor (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e.</li>
+
+<li> Energiproduktion och energianvändning, GWh per år, varav fossilfri energi.</li>
+
+<li> Elproduktion och elanvändning, GWh per år.</li>
+
+<li> Energieffektivitet; BRP per ton utsläpp CO₂e.</li>
+
+<li>Resor per invånare med kollektivtrafik.</li>
+
+<li> Mängd insamlat kommunalt avfall per person.</li>
+
 
 
 <!--Första avsnittet skulle också kunna beskriva strategisk samverkanslogiken och kunskapsläget utifrån "verktygen"...
@@ -159,6 +171,7 @@ ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
 
 De utsläpp som sker inom Dalarnas gränser speglar inte hela länets klimatpåverkan. En del av utsläppen är kopplade till produktion av varor och tjänster som exporteras och används på andra platser. Samtidigt ger vår konsumtion upphov till utsläpp i andra delar av Sverige och världen, där de varor och tjänster vi använder produceras. För att få en mer heltäckande bild av klimatpåverkan behöver utsläppen därför också betraktas ur ett konsumtionsperspektiv – det vill säga de utsläpp som orsakas av våra val och vår efterfrågan, oavsett var i världen de faktiskt sker.
 
+
 ## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
 
 Mängden kommunalt avfall per person är en indikator på hur effektivt samhället använder sina resurser. En minskad avfallsmängd kan tyda på förändrade konsumtionsmönster, ökad återanvändning och längre livslängd på produkter, medan ökande avfallsmängder ofta innebär ett större uttag av råvaror och högre belastning på klimat och miljö. Indikatorn fångar därmed en viktig del av omställningen till ett mer resurseffektivt och cirkulärt samhälle. Även om avfallshanteringen i sig påverkar klimatet är indikatorns främsta värde att den speglar den underliggande konsumtion som driver både materialanvändning, energibehov och utsläpp av växthusgaser, i Dalarna och globalt.
@@ -176,12 +189,30 @@ GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
-## Elproduktion och elanvändning, 
+## Elproduktion och elanvändning
 
 GWh per år (SCB, Energimyndigheten)
 
+Elektrifieringen är en av de viktigaste drivkrafterna i energi- och klimatomställningen. För att minska utsläppen behöver fossila bränslen i transportsektorn, industrin och delar av uppvärmningen ersättas med el eller andra fossilfria energibärare. Detta medför en snabbt växande efterfrågan på el, samtidigt som kraven på ett robust och flexibelt elsystem ökar. Utvecklingen av både elanvändning och elproduktion är därför central att följa. En hög grad av regional elproduktion bidrar till att stärka försörjningstryggheten, minska sårbarheten och skapa bättre förutsättningar för att möta framtidens elbehov. Att Dalarna kan vara, och fortsätta vara, en region med en hög grad av självförsörjning på el är därför betydelsefullt både för omställningen och för länets långsiktiga utveckling.
 
-## Energieffektivitet 
+Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft, vindkraft respektive övrigt. I kategorin övrigt ingår exempelvis kraftvärmeverk och industriellt mottryck, och sedan år 2021 även solkraft. 
+
+Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den ungefär `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023 och var mer eller mindre oförändrad 2024. Den tydliga ökning 2023 kan helt tillskrivas en ökad produktion av vattenkraft och övrigt, medan produktionen från vindkraft ökade mellan 2023 och 2024.  
+
+Även elproduktionen från solkraft, som är en del av kategorin vattenkraft och övrigt i diagrammet nedan, har ökat tydligt i Dalarna på senare år, från ungefär `r elproduktion_sol_2021` MVh år 2021 till ca `r elproduktion_sol_max_ar` MVh år `r elproduktion_max_ar`. Trots ökningen stod solkraft bara för `r solkraft_andel_max_ar` procent av den totala elproduktionen i Dalarna år `r elproduktion_max_ar`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_energiproduktion$elproduktion_Dalarna
+```
+
+I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet från `r sjalvforsorjning_el_min_ar_varde` procent år `r sjalvforsorjning_el_min_ar` till `r sjalvforsorjning_el_max_ar_varde` procent år `r sjalvforsorjning_el_max_ar`. Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
+```
+
+
+## Energieffektivitet
 
 BRP per ton utsläpp CO₂e(SCB, Energimyndigheten)
 
@@ -211,8 +242,7 @@ gg_energieffektivitet$energieffektivitet_alla_lan
 
 ## Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
 
-Transportsektorn står för en betydande del av utsläppen av växthusgaser, och personbilstrafiken utgör den största delen av dessa utsläpp. Elektrifieringen av fordonsflottan är en viktig och nödvändig del av omställningen, men för att minska klimatpåverkan, energianvändningen och trängseln i transportsystemet behöver även beroendet av bilen minska. Kollektivtrafiken spelar därför en central roll genom att erbjuda ett mer transporteffektivt sätt att förflytta människor. Ett ökat kollektivresande kan bidra till minskade utsläpp, ett effektivare nyttjande av infrastruktur och bättre tillgänglighet för fler grupper i samhället. Indikatorn ger därmed en bild av utvecklingen mot ett mer hållbart transportsystem, där resbehov kan tillgodoses med lägre resursanvändning och klimatpåverkan. 
-
+Transportsektorn står för en betydande del av utsläppen av växthusgaser, och personbilstrafiken utgör den största delen av dessa utsläpp. Elektrifieringen av fordonsflottan är en viktig och nödvändig del av omställningen, men för att minska klimatpåverkan, energianvändningen och trängseln i transportsystemet behöver även beroendet av bilen minska. Kollektivtrafiken spelar därför en central roll genom att erbjuda ett mer transporteffektivt sätt att förflytta människor. Ett ökat kollektivresande kan bidra till minskade utsläpp, ett effektivare nyttjande av infrastruktur och bättre tillgänglighet för fler grupper i samhället. Indikatorn ger därmed en bild av utvecklingen mot ett mer hållbart transportsystem, där resbehov kan tillgodoses med lägre resursanvändning och klimatpåverkan.
 
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
@@ -233,37 +263,37 @@ gg_kollektivt_resande$marknadsandel_resande_Dalarna
 <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
 
 
-# Livsmedelsstrategin
-Lite text
+<!-- # Livsmedelsstrategin -->
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+<!-- <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div> -->
 
-# Tillgänglighetsstrategin
+<!-- # Tillgänglighetsstrategin -->
 
-Lite text
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+<!-- <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div> -->
 
 
-# Kompetensplanen
-Lite text
+<!-- # Kompetensplanen -->
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-## Underrubrik igen
-Lite text
+<!-- ## Underrubrik igen -->
+<!-- Lite text -->
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div>
+<!-- <div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200px;"></div> -->
