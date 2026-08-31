@@ -170,7 +170,7 @@ gg_utslapp$utslapp_bransch_Dalarna
 Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r utslapp_min_ar_per_person` ton/invånare år `r utslapp_min_ar`  till ungefär `r utslapp_max_ar_per_person` ton/invånare år `r utslapp_max_ar`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045, vilket innebär en minskning om ungefär `r behovd_minskning` procent årligen mellan `r utslapp_max_ar` och 2045. Som jämförelse minskade utsläppen per person i Dalarna med ungefär `r forandring_sedan_2015` procent per år mellan 2015 och `r utslapp_max_ar`. Även om vi ser en utveckling i rätt riktning kommer det således att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 i enlighet med den nationella målsättningen.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_utslapp$utslapp_per_invanare_Dalarna
+gg_utslapp$utslapp_per_capita_Dalarna
 ```
 
 
@@ -181,7 +181,7 @@ gg_utslapp$utslapp_per_invanare_Dalarna
 
 De utsläpp som sker inom Dalarnas gränser speglar inte hela länets klimatpåverkan. En del av utsläppen är kopplade till produktion av varor och tjänster som exporteras och används på andra platser. Samtidigt ger vår konsumtion upphov till utsläpp i andra delar av Sverige och världen, där de varor och tjänster vi använder produceras. För att få en mer heltäckande bild av klimatpåverkan behöver utsläppen därför också betraktas ur ett konsumtionsperspektiv – det vill säga de utsläpp som orsakas av våra val och vår efterfrågan, oavsett var i världen de faktiskt sker.
 
-<!-- Diagram in här: -->
+*Här ska läggas till diagram över konsumtionsbaserade utsläpp.*
 
 
 
@@ -205,7 +205,7 @@ https://www.energimyndigheten.se/energisystem-och-analys/sveriges-energisystem/h
 https://energifloden.lovable.app/
 -->
 
-Energisystemet utgörs av tre delar; tillförsel, omvandling och användning. Hur hållbart energisystemet är påverkas därför både av vilken energi som tillförs, exempelvis sol, olja eller kärnkraft, hur energin omvandlas till användbar form, så som el, värme och drivmedel, och hur enegerin sedan används.
+Energisystemet utgörs av tre delar; tillförsel, omvandling och användning av energi. Hur hållbart energisystemet är påverkas därför både av vilken energi som tillförs, exempelvis solkraft, olja eller kärnkraft, hur energin omvandlas till användbar form, så som el, värme och drivmedel, och hur energin sedan används.
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
@@ -228,11 +228,17 @@ Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på
 gg_energiproduktion$elproduktion_Dalarna
 ```
 
-I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet från `r sjalvforsorjning_el_min_ar_varde` procent år `r sjalvforsorjning_el_min_ar` till `r sjalvforsorjning_el_max_ar_varde` procent år `r sjalvforsorjning_el_max_ar`. Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
+I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet.
+
+Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
+gg_sjalvforsorjning_el
 ```
+
+<!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'} -->
+<!-- gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna -->
+<!-- ``` -->
 
 
 ## Energieffektivitet

@@ -29,75 +29,31 @@ if(uppdatera_data == TRUE){
     start_time <- Sys.time()
 
     skriptrader_upprepa_om_fel({
-    source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_skogsmark.R")
-      gg_skogsmark <- diagram_skogsmark(region = "20",
-                                        output_mapp = output_mapp_figur,
-                                        returnera_data = TRUE,
-                                        diag_areal = TRUE,
-                                        diag_andel = TRUE,
-                                        ggobjektfilnamn_utan_tid = TRUE,
-                                        spara_figur = spara_figurer)
-      
-      ar_min_skogsmark <- as.character(min(skogsmark_df$år))
-      ar_max_skogsmark <- as.character(max(skogsmark_df$år))
-      
-      areal_skogsmark_forandring_procent <-round(((skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar/skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar)-1)*100,0)
-      areal_skogsmark_min_ar <- format(skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar,big.mark=" ")
-      areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar,big.mark=" ")
-      
-      andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
-      andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
-  })
+  #   source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_skogsmark.R")
+  #     gg_skogsmark <- diagram_skogsmark(region = "20",
+  #                                       output_mapp = output_mapp_figur,
+  #                                       returnera_data = TRUE,
+  #                                       diag_areal = TRUE,
+  #                                       diag_andel = TRUE,
+  #                                       ggobjektfilnamn_utan_tid = TRUE,
+  #                                       spara_figur = spara_figurer)
+  #     
+  #     ar_min_skogsmark <- as.character(min(skogsmark_df$år))
+  #     ar_max_skogsmark <- as.character(max(skogsmark_df$år))
+  #     
+  #     areal_skogsmark_forandring_procent <-round(((skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar/skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar)-1)*100,0)
+  #     areal_skogsmark_min_ar <- format(skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar,big.mark=" ")
+  #     areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar,big.mark=" ")
+  #     
+  #     andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
+  #     andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
+  # })
+  # 
 
 
-## Kollektivt resande
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_kollektivt_resande.R")
-gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
-                                                    output_mapp = output_mapp_figur,
-                                                    returnera_data = TRUE,
-                                                    diag_andel_per_invanare = TRUE,
-                                                    diag_marknadsandel = TRUE,
-                                                    ggobjektfilnamn_utan_tid = TRUE,
-                                                    spara_figur = spara_figurer)
-
-# Resor per invånare
-resande_per_person_min_ar <- min(kollektivt_resande_df$ar)
-resande_per_person_max_ar <- max(kollektivt_resande_df$ar)
-resande_per_person_min_ar_varde <- kollektivt_resande_df %>% filter(ar == min(ar)) %>% .$varde
-resande_per_person_max_ar_varde <- round(kollektivt_resande_df %>% filter(ar == max(ar)) %>% .$varde,0)
-
-# Marknadsandel
-resande_marknadsandel_min_ar <- min(resande_marknadsandel_df$year)
-resande_marknadsandel_max_ar <- max(resande_marknadsandel_df$year)
-resande_marknadsandel_2021 <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value
-resande_marknadandel_min_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value
-resande_marknadsandel_max_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value
-
-okning_minskning_marknadsandel_klartext <- ifelse(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value>resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value,"ökat","minskat")
-forandring_marknadsandel <- abs(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value -resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value)
-
-## Avfall
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/avfall_ny.R")
-gg_avfall <- diagram_avfall(region_vekt = "20",
-                            output_mapp = output_mapp_figur,
-                            returnera_data = TRUE,
-                            ggobjektfilnamn_utan_tid = TRUE,
-                            spara_figur = spara_figurer)
-
-avfall_min_ar <- min(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
-avfall_max_ar <- max(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
-
-avfall_per_person_min_ar <- avfall_df %>% filter(ar == avfall_min_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
-avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == avfall_max_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
-
-avfall_brp_min_ar <- min(avfall_brp_df$ar)
-avfall_brp_max_ar <- max(avfall_brp_df$ar)
-
-avfall_brp_min_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == min(ar)) %>%  .$avfallbrp,10),big.mark = " ")
-avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == max(ar)) %>%  .$avfallbrp,10),big.mark = " ")
 
 ## Utsläpp
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/utslapp.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_vaxthusgaser.R")
 gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
                                    output_mapp = output_mapp_figur,
                                    diag_bransch = TRUE,
@@ -122,6 +78,27 @@ ar_sedan_2015 <- as.integer(max(vaxthusgaser_df$ar))-2015
 
 forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_2015) - 1) * 100),0)
 
+## Avfall
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_avfall.R")
+gg_avfall <- diagram_avfall(region_vekt = "20",
+                            output_mapp = output_mapp_figur,
+                            returnera_data = TRUE,
+                            ggobjektfilnamn_utan_tid = TRUE,
+                            spara_figur = spara_figurer)
+
+avfall_min_ar <- min(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
+avfall_max_ar <- max(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
+
+avfall_per_person_min_ar <- avfall_df %>% filter(ar == avfall_min_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
+avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == avfall_max_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
+
+avfall_brp_min_ar <- min(avfall_brp_df$ar)
+avfall_brp_max_ar <- max(avfall_brp_df$ar)
+
+avfall_brp_min_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == min(ar)) %>%  .$avfallbrp,10),big.mark = " ")
+avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == max(ar)) %>%  .$avfallbrp,10),big.mark = " ")
+
+
 ## Energiproduktion och användning
 
 #produktion av energi: Kommunal och regional energistatistik https://www.scb.se/hitta-statistik/statistik-efter-amne/energi/energibalanser/kommunal-och-regional-energistatistik/
@@ -132,7 +109,7 @@ forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_
 
 
 ## El-produktion
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/energiproduktion.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_energiproduktion.R")
 gg_energiproduktion <- diagram_energiproduktion(region = "20",
                                                 output_mapp = output_mapp_figur,
                                                 returnera_data = TRUE,
@@ -156,23 +133,42 @@ solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variab
 
 ## Självförsörjning av el
 source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_sjalvforsorjning.R")
-gg_sjalvforsorjning <- diagram_sjalvforsorjning(region_vekt = "20",
-                                                output_mapp = output_mapp_figur,
-                                                diag_livsmedel = TRUE,
-                                                diag_el = TRUE,
-                                                returnera_data = TRUE,
-                                                ggobjektfilnamn_utan_tid = TRUE,
-                                                spara_figur = spara_figurer)
 
-# El
-sjalvforsorjning_el_min_ar <- min(sjalvforsorjning_el_df$ar)
-sjalvforsorjning_el_min_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == min(ar)) %>% .$sjalvforsorjning,0)
-sjalvforsorjning_el_max_ar <- max(sjalvforsorjning_el_df$ar)
-sjalvforsorjning_el_max_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == max(ar)) %>% .$sjalvforsorjning,0)
+gg_sjalvforsorjning_el <- sjalvforsorjning_el_df %>%
+  ggplot(aes(x = ar, y = sjalvforsorjning)) +
+  geom_col(fill = "#158daf") +
+  geom_hline(yintercept = 100, linetype = "dashed", color = "red") +
+  labs(
+    title    = "Teoretisk självförsörjning av el i Dalarna",
+    subtitle = "Procent av konsumtion täckt av regional produktion",
+    x        = "År",
+    y        = "Självförsörjning (%)",
+    caption  = "Källa: Kolada\nBearbetning: Samhällsanalys, Region Dalarna"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# gg_sjalvforsorjning <- diagram_sjalvforsorjning(region_vekt = "20",
+#                                                 output_mapp = output_mapp_figur,
+#                                                 diag_livsmedel = FALSE,
+#                                                 diag_el = TRUE,
+#                                                 returnera_data = TRUE,
+#                                                 ggobjektfilnamn_utan_tid = TRUE,
+# 
+#                                                                                                 spara_figur = spara_figurer)
+# # Rensa bort NA som uppstår pga saknad elkonsumtionsdata 2012-2015
+# sjalvforsorjning_el_df <- sjalvforsorjning_el_df %>%
+#   filter(!is.na(sjalvforsorjning))
+# 
+# # El
+# sjalvforsorjning_el_min_ar <- min(sjalvforsorjning_el_df$ar)
+# sjalvforsorjning_el_min_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == min(ar)) %>% .$sjalvforsorjning,0)
+# sjalvforsorjning_el_max_ar <- max(sjalvforsorjning_el_df$ar)
+# sjalvforsorjning_el_max_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == max(ar)) %>% .$sjalvforsorjning,0)
 
 
 ## Energieffektivitet
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/energieffektivitet.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_energieffektivitet.R")
 gg_energieffektivitet <- diagram_energieffektivitet(region = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,
@@ -185,6 +181,35 @@ energieffektivitet_min_ar <- min(energieffektivitet_df$År)
 energieffektivitet_max_ar <- max(energieffektivitet_df$År)
 
 energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter(Region == "Dalarna", År == max(År)) %>% .$value/energieffektivitet_df %>% filter(Region == "Dalarna", År == min(År)) %>% .$value-1)*100,0)
+
+
+## Kollektivt resande
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_vaxthusgaser.R")
+gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
+                                                    output_mapp = output_mapp_figur,
+                                                    returnera_data = TRUE,
+                                                    diag_andel_per_invanare = TRUE,
+                                                    diag_marknadsandel = TRUE,
+                                                    ggobjektfilnamn_utan_tid = TRUE,
+                                                    spara_figur = spara_figurer)
+
+# Resor per invånare
+resande_per_person_min_ar <- min(kollektivt_resande_df$ar)
+resande_per_person_max_ar <- max(kollektivt_resande_df$ar)
+resande_per_person_min_ar_varde <- kollektivt_resande_df %>% filter(ar == min(ar)) %>% .$varde
+resande_per_person_max_ar_varde <- round(kollektivt_resande_df %>% filter(ar == max(ar)) %>% .$varde,0)
+
+# Marknadsandel
+resande_marknadsandel_min_ar <- min(resande_marknadsandel_df$year)
+resande_marknadsandel_max_ar <- max(resande_marknadsandel_df$year)
+resande_marknadsandel_2021 <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value
+resande_marknadandel_min_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value
+resande_marknadsandel_max_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value
+
+okning_minskning_marknadsandel_klartext <- ifelse(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value>resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value,"ökat","minskat")
+forandring_marknadsandel <- abs(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value -resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value)
+
+    })
 
 # Sparar global environment i R. Detta för att man skall slippa hämta data varje gång
 save.image(file = glue("{mapp_environment_fil}{repo_namn}.RData"))
