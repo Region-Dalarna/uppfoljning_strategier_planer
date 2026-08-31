@@ -58,24 +58,25 @@ storeScroll();
 Senast uppdaterad: `r Sys.Date()`</i>
 </p>
 
-# Sammanfattning {-}
+<!-- # Sammanfattning {-} -->
 
-Här ska vi ha en sammanfattning av rapporten. Det ska vara en punktlista med de viktigaste budskapen och inte ett referat av varje avsnitt.
-<br>
+<!-- Här ska vi ha en sammanfattning av rapporten. Det ska vara en punktlista med de viktigaste budskapen och inte ett referat av varje avsnitt. -->
+<!-- <br> -->
 
-<ul>
+<!-- <ul> -->
 
-<li>Första punkten. </li>
+<!-- <li>Första punkten. </li> -->
 
-<li>Andra punkten.</li>
-    
-<li>Tredje punkten.</li>
+<!-- <li>Andra punkten.</li> -->
 
-<li>Fjärde punkten.</li>
+<!-- <li>Tredje punkten.</li> -->
 
-# Introduktion {-}
+<!-- <li>Fjärde punkten.</li> -->
 
-Här kommer en introduktion till rapporten. Det ska vara en kort text som förklarar vad rapporten handlar om och vad läsaren kan förvänta sig att hitta i rapporten.
+
+<!-- # Introduktion {-} -->
+
+<!-- Här kommer en introduktion till rapporten. Det ska vara en kort text som förklarar vad rapporten handlar om och vad läsaren kan förvänta sig att hitta i rapporten. -->
 
 <!-- # Innovationsstrategin -->
 
@@ -111,6 +112,12 @@ Här kommer en introduktion till rapporten. Det ska vara en kort text som förkl
 <!-- ## Underrubrik igen -->
 <!-- Lite text -->
 
+# Introduktion
+
+Den här rapporten redovisar läget för utvecklingen i Dalarna för målen i den regionala energi- och klimatstrategin. Energi- och klimatstrategin är kopplad till den samlande regionala utvecklingsstrategin ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf) och är en av flera strategier som beskriver målsättningar för en hållbar utveckling i länet.
+
+
+
 # Energi- och klimatstrategin
 
 Det övergripande målet för Dalarnas energi- och klimatstrategiska arbete är att skapa förutsättningar för hållbar utveckling på regional och lokal nivå, och därigenom bidra till att de nationella energi- och klimatmålen uppnås. I strategin finns mål, aktiviteter och indikatorer angivna. Denna rapport visar på förändringen över tid för strategins utvalda indikatorer.  Samtidigt kan indikatorerna inte på egen hand visa vilken betydelse strategin har haft för utvecklingen. Uppföljningen kompletteras därför med en översikt av ett urval genomförda aktiviteter och insatser. Forskning om utvärdering och styrning visar att bedömningar av en strategis effekter kräver en bredare analys där resultat, genomförande, omvärldsfaktorer och samband mellan olika åtgärder vägs samman.  Med längre intervall behöver därför fördjupade analyser genomföras för att bedöma strategins bidrag till utvecklingen i länet. Energi- och klimatomställningen är dessutom nära sammanlänkad med ekologisk, social och ekonomisk hållbarhet, vilket innebär att utvecklingen inom ett område både påverkar och påverkas av utvecklingen inom andra.
@@ -120,6 +127,8 @@ Arbetet med att genomföra Energi- och klimatstrategin bedrivs inom samverkans n
 Detta är en sammanställning av de indikatorer som har valts inom arbetet med Energi- och klimatstrategin för Dalarna. Indikatorerna beskriver utvecklingen på samhällsnivå inom områden som bedömts vara viktiga för omställningen och ger en bild av hur läget förändras över tid. Samtidigt kan indikatorerna inte på egen hand visa vilken betydelse strategin har haft för utvecklingen. Uppföljningen kompletteras därför med en översikt av ett urval genomförda aktiviteter och insatser. Forskning om utvärdering och styrning visar att bedömningar av en strategis effekter kräver en bredare analys där resultat, genomförande, omvärldsfaktorer och samband mellan olika åtgärder vägs samman. Med längre tidsintervall behöver därför fördjupade analyser genomföras för att bedöma strategins bidrag till utvecklingen i länet. Energi- och klimatomställningen är dessutom nära sammanlänkad med ekologisk, social och ekonomisk hållbarhet, vilket innebär att utvecklingen inom ett område både påverkar och påverkas av utvecklingen inom andra.
 
 Uppföljning av strategin sker genom följande åtta indikatorer fördelade på sju avsnitt.
+
+<ul>
 
 <li> Totala växthusgasutsläpp, ton CO₂e </li>
 
@@ -137,15 +146,16 @@ Uppföljning av strategin sker genom följande åtta indikatorer fördelade på 
 
 <li> Mängd insamlat kommunalt avfall per person.</li>
 
+</ul>
 
 
 <!--Första avsnittet skulle också kunna beskriva strategisk samverkanslogiken och kunskapsläget utifrån "verktygen"...
 -->
 
 
-## Totala växthusgasutsläpp och per sektor
+## Totala växthusgasutsläpp samt per sektor
 
-ton CO₂e (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen)
+<!-- ton CO₂e (industri, transporter, bostäder och lokaler, arbetsmaskiner, jordbruk och övrigt, ton CO₂e (SCB, Nationella emissionsdatabasen) -->
 
 Utsläppen av växthusgaser är i huvudsak en följd av samhällets användning av fossila bränslen och är den grundläggande orsaken till den pågående klimatförändringen. Målen i Dalarna ligger i linje med de nationella klimatmålen, med sikte på nettonollutsläpp senast 2045. Samtidigt är det inte bara målåret som är avgörande, utan även hur snabbt utsläppen minskar på vägen dit. Eftersom klimatpåverkan beror på den samlade mängden växthusgaser som släpps ut över tid kan tidiga utsläppsminskningar ge större nytta än motsvarande minskningar längre fram. Ur ett klimatbudgetperspektiv är därför den totala mängden utsläpp fram till måluppfyllelse minst lika viktig som att nå själva slutmålet.
 
@@ -160,19 +170,24 @@ gg_utslapp$utslapp_bransch_Dalarna
 Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r utslapp_min_ar_per_person` ton/invånare år `r utslapp_min_ar`  till ungefär `r utslapp_max_ar_per_person` ton/invånare år `r utslapp_max_ar`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045, vilket innebär en minskning om ungefär `r behovd_minskning` procent årligen mellan `r utslapp_max_ar` och 2045. Som jämförelse minskade utsläppen per person i Dalarna med ungefär `r forandring_sedan_2015` procent per år mellan 2015 och `r utslapp_max_ar`. Även om vi ser en utveckling i rätt riktning kommer det således att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 i enlighet med den nationella målsättningen.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_utslapp$utslapp_per_capita_Dalarna
+gg_utslapp$utslapp_per_invanare_Dalarna
 ```
 
 
 
 ## Konsumtionsbaserade utsläpp
 
-ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen)
+<!-- ton CO₂e/invånare (Naturvårdsverket, Konsumtionskompassen) -->
 
 De utsläpp som sker inom Dalarnas gränser speglar inte hela länets klimatpåverkan. En del av utsläppen är kopplade till produktion av varor och tjänster som exporteras och används på andra platser. Samtidigt ger vår konsumtion upphov till utsläpp i andra delar av Sverige och världen, där de varor och tjänster vi använder produceras. För att få en mer heltäckande bild av klimatpåverkan behöver utsläppen därför också betraktas ur ett konsumtionsperspektiv – det vill säga de utsläpp som orsakas av våra val och vår efterfrågan, oavsett var i världen de faktiskt sker.
 
+<!-- Diagram in här: -->
 
-## Mängd insamlat kommunalt avfall per person (SCB, Kolada)
+
+
+## Mängd insamlat kommunalt avfall per person 
+
+<!-- (SCB, Kolada) -->
 
 Mängden kommunalt avfall per person är en indikator på hur effektivt samhället använder sina resurser. En minskad avfallsmängd kan tyda på förändrade konsumtionsmönster, ökad återanvändning och längre livslängd på produkter, medan ökande avfallsmängder ofta innebär ett större uttag av råvaror och högre belastning på klimat och miljö. Indikatorn fångar därmed en viktig del av omställningen till ett mer resurseffektivt och cirkulärt samhälle. Även om avfallshanteringen i sig påverkar klimatet är indikatorns främsta värde att den speglar den underliggande konsumtion som driver både materialanvändning, energibehov och utsläpp av växthusgaser, i Dalarna och globalt.
 
@@ -185,17 +200,25 @@ gg_avfall$avfall_Dalarna
 
 ## Energiproduktion och energianvändning
 
-GWh per år, varav fossilfri energi (SCB, Energimyndigheten)
+<!-- GWh per år, varav fossilfri energi (SCB, Energimyndigheten) 
+https://www.energimyndigheten.se/energisystem-och-analys/sveriges-energisystem/hur-fungerar-energisystemet/sveriges-energisystem/
+https://energifloden.lovable.app/
+-->
+
+Energisystemet utgörs av tre delar; tillförsel, omvandling och användning. Hur hållbart energisystemet är påverkas därför både av vilken energi som tillförs, exempelvis sol, olja eller kärnkraft, hur energin omvandlas till användbar form, så som el, värme och drivmedel, och hur enegerin sedan används.
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
+*Här ska läggas till diagram över energitillförsel och användning i Dalarna (ej klart)*
+
+
 ## Elproduktion och elanvändning
 
-GWh per år (SCB, Energimyndigheten)
+<!-- GWh per år (SCB, Energimyndigheten) -->
 
-Elektrifieringen är en av de viktigaste drivkrafterna i energi- och klimatomställningen. För att minska utsläppen behöver fossila bränslen i transportsektorn, industrin och delar av uppvärmningen ersättas med el eller andra fossilfria energibärare. Detta medför en snabbt växande efterfrågan på el, samtidigt som kraven på ett robust och flexibelt elsystem ökar. Utvecklingen av både elanvändning och elproduktion är därför central att följa. En hög grad av regional elproduktion bidrar till att stärka försörjningstryggheten, minska sårbarheten och skapa bättre förutsättningar för att möta framtidens elbehov. Att Dalarna kan vara, och fortsätta vara, en region med en hög grad av självförsörjning på el är därför betydelsefullt både för omställningen och för länets långsiktiga utveckling.
+Elektrifieringen är en av de viktigaste drivkrafterna i energi- och klimatomställningen. För att minska utsläppen behöver fossila bränslen i transportsektorn, industrin och delar av uppvärmningen ersättas med el producerad av hållbara energislag eller andra fossilfria energibärare. Detta medför en snabbt växande efterfrågan på el, samtidigt som kraven på ett robust och flexibelt elsystem ökar. Utvecklingen av både elanvändning och elproduktion är därför central att följa. En hög grad av regional elproduktion bidrar till att stärka försörjningstryggheten, minska sårbarheten och skapa bättre förutsättningar för att möta framtidens elbehov. Att Dalarna kan vara, och fortsätta vara, en region med en hög grad av självförsörjning på el är därför betydelsefullt både för omställningen och för länets långsiktiga utveckling.
 
-Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vindkraft respektie vattenkraft och övrigt. I kategorin övrigt ingår exempelvis kraftvärmeverk och industriellt mottryck, och sedan år 2021 även solkraft. 
+Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vindkraft respektive vattenkraft och övrigt. I kategorin övrigt ingår exempelvis kraftvärmeverk och industriellt mottryck, och sedan år 2021 även solkraft. 
 
 Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den ungefär `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023 och var mer eller mindre oförändrad 2024. Den tydliga ökning 2023 kan helt tillskrivas en ökad produktion av vattenkraft och övrigt, medan produktionen från vindkraft ökade mellan 2023 och 2024.  
 
@@ -214,13 +237,11 @@ gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 
 ## Energieffektivitet
 
-BRP per ton utsläpp CO₂e(SCB, Energimyndigheten)
-
+<!-- BRP per ton utsläpp CO₂e(SCB, Energimyndigheten) -->
 En mer effektiv användning av energi är en av de mest kostnadseffektiva vägarna i energi- och klimatomställningen. Trots teknisk utveckling finns fortfarande betydande potential att minska energislöseri i byggnader, transporter och industri. Genom att använda energi smartare kan samma eller högre värde skapas med mindre resursinsats. Indikatorn BRP per ton koldioxidutsläpp beskriver hur väl ekonomiskt värdeskapande frikopplas från klimatpåverkan. En ökande kvot innebär att länets ekonomi utvecklas samtidigt som utsläppen minskar, vilket är ett tecken på ökad resurs- och energieffektivitet. Att skapa mer välfärd och ekonomiskt värde med lägre energianvändning och mindre klimatpåverkan är en central del av omställningen till ett konkurrenskraftigt och hållbart samhälle.
 
 
 Elektrifieringen är en av de viktigaste drivkrafterna i energi- och klimatomställningen. För att minska utsläppen behöver fossila bränslen i transportsektorn, industrin och delar av uppvärmningen ersättas med el eller andra fossilfria energibärare. Detta medför en snabbt växande efterfrågan på el, samtidigt som kraven på ett robust och flexibelt elsystem ökar. Utvecklingen av både elanvändning och elproduktion är därför central att följa. En hög grad av regional elproduktion bidrar till att stärka försörjningstryggheten, minska sårbarheten och skapa bättre förutsättningar för att möta framtidens elbehov. Att Dalarna kan vara, och fortsätta vara, en region med en hög grad av självförsörjning på el är därför betydelsefullt både för omställningen och för länets långsiktiga utveckling.
-
 
 Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta utsläppen som genereras i länet i relation till de ekonomiska värden som produceras med energin. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. 
 
@@ -240,7 +261,8 @@ I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre ha
 gg_energieffektivitet$energieffektivitet_alla_lan
 ```
 
-## Resor per invånare med kollektivtrafik (Trafikanalys, Kolada) 
+## Resor per invånare med kollektivtrafik 
+<!-- (Trafikanalys, Kolada)  -->
 
 Transportsektorn står för en betydande del av utsläppen av växthusgaser, och personbilstrafiken utgör den största delen av dessa utsläpp. Elektrifieringen av fordonsflottan är en viktig och nödvändig del av omställningen, men för att minska klimatpåverkan, energianvändningen och trängseln i transportsystemet behöver även beroendet av bilen minska. Kollektivtrafiken spelar därför en central roll genom att erbjuda ett mer transporteffektivt sätt att förflytta människor. Ett ökat kollektivresande kan bidra till minskade utsläpp, ett effektivare nyttjande av infrastruktur och bättre tillgänglighet för fler grupper i samhället. Indikatorn ger därmed en bild av utvecklingen mot ett mer hållbart transportsystem, där resbehov kan tillgodoses med lägre resursanvändning och klimatpåverkan.
 
