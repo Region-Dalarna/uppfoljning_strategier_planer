@@ -209,7 +209,7 @@ Energisystemet utgörs av tre delar; tillförsel, omvandling och användning av 
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
-*Här ska läggas till diagram över energitillförsel och användning i Dalarna (ej klart)*
+*Här ska läggas till diagram över energitillförsel och användning.*
 
 
 ## Elproduktion och elanvändning
