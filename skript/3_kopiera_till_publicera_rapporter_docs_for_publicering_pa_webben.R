@@ -6,7 +6,7 @@ kopiera_till_publicera_rapporter_docs <- function(
   ) {
 
 if (!require("pacman")) install.packages("pacman")
-p_load(here)
+p_load(here, glue, stringr)
 
 if (is.null(repo_namn) & !is.null(rstudioapi::getActiveProject())) {
   repo_lokal_sokvag <- here()
