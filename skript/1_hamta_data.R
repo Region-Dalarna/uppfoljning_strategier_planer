@@ -14,7 +14,8 @@ spara_figurer = FALSE
 if (!require("pacman")) install.packages("pacman")
 p_load(tidyverse,
        here,
-       glue)
+       glue,
+       rKolada)
 
 mapp_environment_fil = "g:/skript/projekt/environments/" # OBS: Får ej ändras
 repo_namn = "uppfoljning_strategier_planer" # OBS: Får ej ändras
@@ -78,6 +79,16 @@ ar_sedan_2015 <- as.integer(max(vaxthusgaser_df$ar))-2015
 
 forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_2015) - 1) * 100),0)
 
+# Utsläpp kopplat till konsumtion - Stockholm Environment Institute
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_utslapp_konsumtion_SEI.R")
+gg_utslapp_konsumtion <- diagram_konsumtionsutslapp(output_mapp = output_mapp_figur,
+                                                    diag_lan = TRUE, # Ger jämförelse mellan län för senaste år och en tidsserie där jämförelse görs enlig variabeln jmf ovan
+                                                    diag_kommun = TRUE, # Ger jämförelse på senaste år för kommuner i valt län
+                                                    returnera_data = TRUE,
+                                                    ggobjektfilnamn_utan_tid = TRUE,
+                                                    spara_figur = spara_figurer)
+
+
 ## Avfall
 source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_avfall.R")
 gg_avfall <- diagram_avfall(region_vekt = "20",
@@ -132,11 +143,40 @@ solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variab
 
 
 ## Självförsörjning av el
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_sjalvforsorjning.R")
+# Hämtning av data
+region_vekt = "20"
+elproduktion_df <- hamta_kolada_df(kpi = c("N45926"),region_vekt,valda_ar = c(2012:2100))
 
+# Väljer bort variabler och ger mer rimliga namn.
+elproduktion_df <- elproduktion_df %>% 
+  mutate(variabel_kort = case_when(
+    variabelkod == "N45926" ~ "Totalt")) %>% 
+  select(ar,region,variabel_kort,varde)
+
+# Av oklar anledning hämtas inte båda variablerna i en och samma funktionanrop, så två anrop krävs.
+elkonsumtion_df <- hamta_kolada_df(kpi = c("N45906"),region_vekt,valda_ar = c(2016:2100))
+invanare_df <- hamta_kolada_df(kpi = c("N01951"),konsuppdelat = FALSE,region_vekt,valda_ar = c(2016:2100))
+
+# Left join elkonsumtion och invånare
+elkonsumtion_df <- rbind(elkonsumtion_df,invanare_df %>% filter(ar %in% unique(elkonsumtion_df$ar))) %>% 
+  select(-variabelkod)
+
+# Beräknar total konsumtion av el. Detta är enklare om data först görs om till wide
+elkonsumtion_df <- pivot_wider(elkonsumtion_df, names_from = variabel, values_from = varde) %>% 
+  mutate(konsumtion = `Invånare totalt, antal`*`Slutanvändning av el inom det geografiska området, MWh/inv`) %>%
+  select(-c(`Invånare totalt, antal`,`Slutanvändning av el inom det geografiska området, MWh/inv`,kon)) 
+
+# Binder ihop elproduktion och elkonsumtion för att beräkna självförsörjningsgrad
+sjalvforsorjning_el_df <- elproduktion_df %>% 
+  filter(ar %in% unique(elkonsumtion_df$ar) ) %>% 
+  left_join(elkonsumtion_df, by = c("ar","region")) %>% 
+  mutate(sjalvforsorjning = round((varde / konsumtion)*100,2)) %>% 
+  select(ar,region,sjalvforsorjning)
+
+# Diagrammet
 gg_sjalvforsorjning_el <- sjalvforsorjning_el_df %>%
   ggplot(aes(x = ar, y = sjalvforsorjning)) +
-  geom_col(fill = "#158daf") +
+  geom_col(fill = diagramfarger("rus_sex")[1]) +
   geom_hline(yintercept = 100, linetype = "dashed", color = "red") +
   labs(
     title    = "Teoretisk självförsörjning av el i Dalarna",
@@ -184,7 +224,7 @@ energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter
 
 
 ## Kollektivt resande
-source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_vaxthusgaser.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_kollektivt_resande.R")
 gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,

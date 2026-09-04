@@ -181,9 +181,17 @@ gg_utslapp$utslapp_per_capita_Dalarna
 
 De utsläpp som sker inom Dalarnas gränser speglar inte hela länets klimatpåverkan. En del av utsläppen är kopplade till produktion av varor och tjänster som exporteras och används på andra platser. Samtidigt ger vår konsumtion upphov till utsläpp i andra delar av Sverige och världen, där de varor och tjänster vi använder produceras. För att få en mer heltäckande bild av klimatpåverkan behöver utsläppen därför också betraktas ur ett konsumtionsperspektiv – det vill säga de utsläpp som orsakas av våra val och vår efterfrågan, oavsett var i världen de faktiskt sker.
 
-*Här ska läggas till diagram över konsumtionsbaserade utsläpp.*
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp_konsumtion$kons_utslapp_lan
+```
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp_konsumtion$kons_utslapp_Dalarna
+```
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp_konsumtion$kons_utslapp_tid
+```
 
 ## Mängd insamlat kommunalt avfall per person 
 
