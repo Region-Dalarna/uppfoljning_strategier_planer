@@ -144,58 +144,58 @@ solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variab
 
 ## Självförsörjning av el
 # Hämtning av data
-region_vekt = "20"
-elproduktion_df <- hamta_kolada_df(kpi = c("N45926"),region_vekt,valda_ar = c(2012:2100))
-
-# Väljer bort variabler och ger mer rimliga namn.
-elproduktion_df <- elproduktion_df %>% 
-  mutate(variabel_kort = case_when(
-    variabelkod == "N45926" ~ "Totalt")) %>% 
-  select(ar,region,variabel_kort,varde)
-
-# Av oklar anledning hämtas inte båda variablerna i en och samma funktionanrop, så två anrop krävs.
-elkonsumtion_df <- hamta_kolada_df(kpi = c("N45906"),region_vekt,valda_ar = c(2016:2100))
-invanare_df <- hamta_kolada_df(kpi = c("N01951"),konsuppdelat = FALSE,region_vekt,valda_ar = c(2016:2100))
-
-# Left join elkonsumtion och invånare
-elkonsumtion_df <- rbind(elkonsumtion_df,invanare_df %>% filter(ar %in% unique(elkonsumtion_df$ar))) %>% 
-  select(-variabelkod)
-
-# Beräknar total konsumtion av el. Detta är enklare om data först görs om till wide
-elkonsumtion_df <- pivot_wider(elkonsumtion_df, names_from = variabel, values_from = varde) %>% 
-  mutate(konsumtion = `Invånare totalt, antal`*`Slutanvändning av el inom det geografiska området, MWh/inv`) %>%
-  select(-c(`Invånare totalt, antal`,`Slutanvändning av el inom det geografiska området, MWh/inv`,kon)) 
-
-# Binder ihop elproduktion och elkonsumtion för att beräkna självförsörjningsgrad
-sjalvforsorjning_el_df <- elproduktion_df %>% 
-  filter(ar %in% unique(elkonsumtion_df$ar) ) %>% 
-  left_join(elkonsumtion_df, by = c("ar","region")) %>% 
-  mutate(sjalvforsorjning = round((varde / konsumtion)*100,2)) %>% 
-  select(ar,region,sjalvforsorjning)
-
-# Diagrammet
-gg_sjalvforsorjning_el <- sjalvforsorjning_el_df %>%
-  ggplot(aes(x = ar, y = sjalvforsorjning)) +
-  geom_col(fill = diagramfarger("rus_sex")[1]) +
-  geom_hline(yintercept = 100, linetype = "dashed", color = "red") +
-  labs(
-    title    = "Teoretisk självförsörjning av el i Dalarna",
-    subtitle = "Procent av konsumtion täckt av regional produktion",
-    x        = "År",
-    y        = "Självförsörjning (%)",
-    caption  = "Källa: Kolada\nBearbetning: Samhällsanalys, Region Dalarna"
-  ) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-# gg_sjalvforsorjning <- diagram_sjalvforsorjning(region_vekt = "20",
-#                                                 output_mapp = output_mapp_figur,
-#                                                 diag_livsmedel = FALSE,
-#                                                 diag_el = TRUE,
-#                                                 returnera_data = TRUE,
-#                                                 ggobjektfilnamn_utan_tid = TRUE,
+# region_vekt = "20"
+# elproduktion_df <- hamta_kolada_df(kpi = c("N45926"),region_vekt,valda_ar = c(2012:2100))
 # 
-#                                                                                                 spara_figur = spara_figurer)
+# # Väljer bort variabler och ger mer rimliga namn.
+# elproduktion_df <- elproduktion_df %>% 
+#   mutate(variabel_kort = case_when(
+#     variabelkod == "N45926" ~ "Totalt")) %>% 
+#   select(ar,region,variabel_kort,varde)
+# 
+# # Av oklar anledning hämtas inte båda variablerna i en och samma funktionanrop, så två anrop krävs.
+# elkonsumtion_df <- hamta_kolada_df(kpi = c("N45906"),region_vekt,valda_ar = c(2016:2100))
+# invanare_df <- hamta_kolada_df(kpi = c("N01951"),konsuppdelat = FALSE,region_vekt,valda_ar = c(2016:2100))
+# 
+# # Left join elkonsumtion och invånare
+# elkonsumtion_df <- rbind(elkonsumtion_df,invanare_df %>% filter(ar %in% unique(elkonsumtion_df$ar))) %>% 
+#   select(-variabelkod)
+# 
+# # Beräknar total konsumtion av el. Detta är enklare om data först görs om till wide
+# elkonsumtion_df <- pivot_wider(elkonsumtion_df, names_from = variabel, values_from = varde) %>% 
+#   mutate(konsumtion = `Invånare totalt, antal`*`Slutanvändning av el inom det geografiska området, MWh/inv`) %>%
+#   select(-c(`Invånare totalt, antal`,`Slutanvändning av el inom det geografiska området, MWh/inv`,kon)) 
+# 
+# # Binder ihop elproduktion och elkonsumtion för att beräkna självförsörjningsgrad
+# sjalvforsorjning_el_df <- elproduktion_df %>% 
+#   filter(ar %in% unique(elkonsumtion_df$ar) ) %>% 
+#   left_join(elkonsumtion_df, by = c("ar","region")) %>% 
+#   mutate(sjalvforsorjning = round((varde / konsumtion)*100,2)) %>% 
+#   select(ar,region,sjalvforsorjning)
+# 
+# # Diagrammet
+# gg_sjalvforsorjning_el <- sjalvforsorjning_el_df %>%
+#   ggplot(aes(x = ar, y = sjalvforsorjning)) +
+#   geom_col(fill = diagramfarger("rus_sex")[1]) +
+#   geom_hline(yintercept = 100, linetype = "dashed", color = "red") +
+#   labs(
+#     title    = "Teoretisk självförsörjning av el i Dalarna",
+#     subtitle = "Procent av konsumtion täckt av regional produktion",
+#     x        = "År",
+#     y        = "Självförsörjning (%)",
+#     caption  = "Källa: Kolada\nBearbetning: Samhällsanalys, Region Dalarna"
+#   ) +
+#   theme_minimal() +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_sjalvforsorjning.R")
+gg_sjalvforsorjning_el <- diagram_sjalvforsorjning(region_vekt = "20",
+                                                output_mapp = output_mapp_figur,
+                                                diag_livsmedel = FALSE,
+                                                diag_el = TRUE,
+                                                returnera_data = TRUE,
+                                                ggobjektfilnamn_utan_tid = TRUE,
+
+                                                                                                spara_figur = spara_figurer)
 # # Rensa bort NA som uppstår pga saknad elkonsumtionsdata 2012-2015
 # sjalvforsorjning_el_df <- sjalvforsorjning_el_df %>%
 #   filter(!is.na(sjalvforsorjning))

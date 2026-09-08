@@ -241,7 +241,7 @@ I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elekt
 Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_sjalvforsorjning_el
+gg_sjalvforsorjning_el$teoretisk_sjalvforsorjning_el_Dalarna
 ```
 
 <!-- ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'} -->
