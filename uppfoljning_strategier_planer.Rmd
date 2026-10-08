@@ -114,8 +114,13 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Introduktion
 
-Den här rapporten redovisar läget för utvecklingen i Dalarna för målen i den regionala energi- och klimatstrategin. Energi- och klimatstrategin är kopplad till den samlande regionala utvecklingsstrategin ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf) och är en av flera strategier som beskriver målsättningar för en hållbar utveckling i länet.
+Den här rapporten samlar redovisningar av läget för utvecklingen i Dalarna utifrån de olika områdesstrategier som utgör delstrategier till den samlade regionala utvecklingsstrategin ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf). 
 
+Följande strategier ingår:
+
+- Energi- och klimatstrategin
+- xxx
+- xx
 
 
 # Energi- och klimatstrategin
@@ -149,7 +154,7 @@ Uppföljning av strategin sker genom följande åtta indikatorer fördelade på 
 </ul>
 
 
-<!--Första avsnittet skulle också kunna beskriva strategisk samverkanslogiken och kunskapsläget utifrån "verktygen"...
+<!--Första avsnittet skulle också kunna beskriva strategisk samverkanslogik och kunskapsläget utifrån "verktygen"...
 -->
 
 
