@@ -214,11 +214,12 @@ gg_avfall$avfall_Dalarna
 ## Energiproduktion och energianvändning
 
 <!-- GWh per år, varav fossilfri energi (SCB, Energimyndigheten) 
-https://www.energimyndigheten.se/energisystem-och-analys/sveriges-energisystem/hur-fungerar-energisystemet/sveriges-energisystem/
+
 https://energifloden.lovable.app/
 -->
 
-Energisystemet utgörs av tre delar; tillförsel, omvandling och användning av energi. Hur hållbart energisystemet är påverkas därför både av vilken energi som tillförs, exempelvis solkraft, olja eller kärnkraft, hur energin omvandlas till användbar form, så som el, värme och drivmedel, och hur energin sedan används.
+Energisystemet utgörs av tre delar; tillförsel, omvandling och användning av energi. Hur hållbart energisystemet är påverkas därför både av vilken energi som tillförs, exempelvis solkraft, olja eller kärnkraft, hur energin omvandlas till användbar form, så som el, värme och drivmedel, och hur energin sedan används, och vilka förluster som uppstår vid omvandling och förbrukning. En nationell överblick över detta finns på ["Energimyndighetens hemsida"](https://www.energimyndigheten.se/energisystem-och-analys/sveriges-energisystem/hur-fungerar-energisystemet/sveriges-energisystem/).
+
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
