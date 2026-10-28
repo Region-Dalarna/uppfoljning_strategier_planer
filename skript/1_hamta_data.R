@@ -15,7 +15,9 @@ if (!require("pacman")) install.packages("pacman")
 p_load(tidyverse,
        here,
        glue,
-       rKolada)
+       rKolada,
+       pxweb,
+       ggtext)
 
 mapp_environment_fil = "g:/skript/projekt/environments/" # OBS: Får ej ändras
 repo_namn = "uppfoljning_strategier_planer" # OBS: Får ej ändras
@@ -30,38 +32,21 @@ if(uppdatera_data == TRUE){
     start_time <- Sys.time()
 
     skriptrader_upprepa_om_fel({
-  #   source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_skogsmark.R")
-  #     gg_skogsmark <- diagram_skogsmark(region = "20",
-  #                                       output_mapp = output_mapp_figur,
-  #                                       returnera_data = TRUE,
-  #                                       diag_areal = TRUE,
-  #                                       diag_andel = TRUE,
-  #                                       ggobjektfilnamn_utan_tid = TRUE,
-  #                                       spara_figur = spara_figurer)
-  #     
-  #     ar_min_skogsmark <- as.character(min(skogsmark_df$år))
-  #     ar_max_skogsmark <- as.character(max(skogsmark_df$år))
-  #     
-  #     areal_skogsmark_forandring_procent <-round(((skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar/skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar)-1)*100,0)
-  #     areal_skogsmark_min_ar <- format(skogsmark_df %>% filter(år==min(år)) %>% .$area_hektar,big.mark=" ")
-  #     areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$area_hektar,big.mark=" ")
-  #     
-  #     andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
-  #     andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
-  # })
-  # 
-
-
+ 
 
 ## Utsläpp
 source("https://raw.githubusercontent.com/Region-Dalarna/uppfoljning_dalastrategin/refs/heads/main/Skript/diagram_vaxthusgaser.R")
-gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
-                                   output_mapp = output_mapp_figur,
-                                   diag_bransch = TRUE,
-                                   diag_per_invanare = TRUE,
-                                   returnera_data = TRUE,
-                                   ggobjektfilnamn_utan_tid = TRUE,
-                                   spara_figur = spara_figurer)
+      
+      gg_utslapp <- diagram_vaxthusgaser(
+        region_vekt              = "20",
+        output_mapp              = output_mapp_figur,
+        diag_bransch             = TRUE,
+        diag_per_invanare        = TRUE,
+        returnera_data           = TRUE,
+        ggobjektfilnamn_utan_tid = TRUE,
+        spara_figur              = spara_figurer
+      )
+      
 
 utslapp_min_ar <- min(vaxthusgaser_df$ar)
 utslapp_max_ar <- max(vaxthusgaser_df$ar)
@@ -79,6 +64,7 @@ ar_sedan_2015 <- as.integer(max(vaxthusgaser_df$ar))-2015
 
 forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_2015) - 1) * 100),0)
 
+
 # Utsläpp kopplat till konsumtion - Stockholm Environment Institute
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_utslapp_konsumtion_SEI.R")
 gg_utslapp_konsumtion <- diagram_konsumtionsutslapp(output_mapp = output_mapp_figur,
@@ -87,6 +73,7 @@ gg_utslapp_konsumtion <- diagram_konsumtionsutslapp(output_mapp = output_mapp_fi
                                                     returnera_data = TRUE,
                                                     ggobjektfilnamn_utan_tid = TRUE,
                                                     spara_figur = spara_figurer)
+
 
 
 ## Avfall
@@ -108,13 +95,6 @@ avfall_brp_max_ar <- max(avfall_brp_df$ar)
 
 avfall_brp_min_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == min(ar)) %>%  .$avfallbrp,10),big.mark = " ")
 avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == max(ar)) %>%  .$avfallbrp,10),big.mark = " ")
-
-
-## Energiproduktion och användning
-
-#produktion av energi: Kommunal och regional energistatistik https://www.scb.se/hitta-statistik/statistik-efter-amne/energi/energibalanser/kommunal-och-regional-energistatistik/
-
-#slutanvändning av energi: https://kolada.se/verktyg/fri-sokning/?kpis=95014&years=30203,30202,30201&municipals=27508&rows=municipal,kpi&visualization=&focus=27508
 
 
 
@@ -264,3 +244,178 @@ cat("\n\n")
   load(glue("{mapp_environment_fil}{repo_namn}.RData"))
 }
 
+## Energiproduktion och användning
+
+#produktion av energi: Kommunal och regional energistatistik https://www.scb.se/hitta-statistik/statistik-efter-amne/energi/energibalanser/kommunal-och-regional-energistatistik/
+
+#slutanvändning av energi per invånare: https://kolada.se/verktyg/fri-sokning/?kpis=95014&years=30203,30202,30201&municipals=27508&rows=municipal,kpi&visualization=&focus=27508
+
+library(pxweb)
+library(tidyverse)
+
+# Hämta data för Dalarna
+pxweb_query <- list(
+  "Region"             = c("20"),
+  "Forbrukningskategri" = c("*"),  # alla kategorier
+  "Bransle"            = c("*"),   # alla bränsletyper
+  "ContentsCode"       = c("EN0203AE"),  # slutanvändning MWh
+  "Tid"                = c("*")    # alla år
+)
+
+px_data <- pxweb_get(
+  url   = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/EN/EN0203/EN0203A/SlutAnvSektor",
+  query = pxweb_query
+)
+
+# Konvertera till dataframe
+energi_df <- as.data.frame(px_data, 
+                           column.name.type = "text", 
+                           variable.value.type = "text")
+
+
+# Hämta totaldata
+energi_total <- energi_df %>%
+  rename(
+    varde    = `Slutanvändning (MWh)`,
+    kategori = förbrukarkategori,
+    bransle  = bränsletyp,
+    ar       = år
+  ) %>%
+  filter(
+    !is.na(varde),
+    kategori == "totalt",
+    bransle  == "totalt"
+  ) %>%
+  mutate(
+    #ar        = as.numeric(ar),
+    varde_twh = varde / 1000000
+  )
+
+# Diagram med staplar + linje
+gg_energi <- energi_fornybart %>%
+  ggplot(aes(x = ar, y = varde_twh, fill = fornybart)) +
+  geom_col(position = "stack") +
+  geom_line(data = energi_total, 
+            aes(x = ar, y = varde_twh),
+            inherit.aes = FALSE,
+            color = "black",
+            linewidth = 1,
+            linetype = "dashed") +
+  geom_point(data = energi_total,
+             aes(x = ar, y = varde_twh),
+             inherit.aes = FALSE,
+             color = "black",
+             size = 2) +
+  scale_fill_manual(values = c(
+    "Fjärrvärme"     = diagramfarger()[1],
+    "El" = diagramfarger()[2],
+    "Förnybart"     = diagramfarger()[3],
+    "Icke förnybart" = diagramfarger()[4]
+  )) +
+  labs(
+    title    = "Slutanvändning av energi i Dalarna",
+    subtitle = "Fördelat på förnybart, icke förnybart, el och fjärrvärme. Streckad linje = total",
+    x        = "År",
+    y        = "TWh",
+    fill     = NULL,
+    caption  = "Källa: SCB, Kommunal och regional energistatistik\nBearbetning: Samhällsanalys, Region Dalarna"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+gg_energi
+
+# Energiåtgång för fjärrvärmeproduktion uppdelat i förnybar och inte förnybara resurser.
+
+
+
+# Hämta fjärrvärmedata för Dalarna
+pxweb_query_fj <- list(
+  "Region"         = c("20"),
+  "Produktionssatt" = c("Totalt"),        # bara totalt
+  "Bransle"        = c("*"),              # alla bränsletyper
+  "ContentsCode"   = c("EN0203AC"),
+  "Tid"            = c("*")
+)
+
+px_data_fj <- pxweb_get(
+  url   = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/EN/EN0203/EN0203A/ProdbrFj",
+  query = pxweb_query_fj
+)
+
+# Konvertera till dataframe
+fjarrvarme_df <- as.data.frame(px_data_fj,
+                               column.name.type  = "text",
+                               variable.value.type = "text") %>%
+  rename(
+    varde      = `Fjärrvärmeproduktion och bränsleanvändning (MWh)`,
+    bransle    = bränsletyp,
+    ar         = år
+  ) %>%
+  mutate(ar = as.numeric(ar))
+
+head(fjarrvarme_df)
+unique(fjarrvarme_df$bransle)
+
+
+# Stapeldata - bränsleanvändning uppdelat på förnybart/icke förnybart
+bransle_stapel <- fjarrvarme_df %>%
+  filter(
+    !is.na(varde),
+    bransle != "totalt",
+    bransle != "fjärrvärmeproduktion"
+  ) %>%
+  mutate(
+    fornybart = case_when(
+      str_detect(bransle, "icke förnybara") ~ "Icke förnybart",
+      str_detect(bransle, "förnybara")      ~ "Förnybart",
+      TRUE ~ bransle
+    ),
+    varde_twh = varde / 1000000
+  ) %>%
+  group_by(ar, fornybart) %>%
+  summarise(varde_twh = sum(varde_twh, na.rm = TRUE), .groups = "drop")
+
+# Linjedata - fjärrvärmeproduktion totalt
+fjarrvarme_linje <- fjarrvarme_df %>%
+  filter(
+    !is.na(varde),
+    bransle == "fjärrvärmeproduktion"
+  ) %>%
+  mutate(varde_twh = varde / 1000000)
+
+# Diagram
+gg_fjarrvarme <- bransle_stapel %>%
+  ggplot(aes(x = ar, y = varde_twh, fill = fornybart)) +
+  geom_col(position = "stack") +
+  geom_line(
+    data        = fjarrvarme_linje,
+    aes(x = ar, y = varde_twh),
+    inherit.aes = FALSE,
+    color       = "black",
+    linewidth   = 1,
+    linetype    = "dashed"
+  ) +
+  geom_point(
+    data        = fjarrvarme_linje,
+    aes(x = ar, y = varde_twh),
+    inherit.aes = FALSE,
+    color       = "black",
+    size        = 2
+  ) +
+  scale_fill_manual(values = c(
+    "Förnybart"     = diagramfarger()[1],
+    "Icke förnybart" = diagramfarger()[2]
+  )) +
+  labs(
+    title    = "Fjärrvärmeproduktion och bränsleanvändning i Dalarna",
+    subtitle = "Staplar = bränsleanvändning, streckad linje = fjärrvärmeproduktion",
+    x        = "År",
+    y        = "TWh",
+    fill     = NULL,
+    caption  = "Källa: SCB, Kommunal och regional energistatistik\nBearbetning: Samhällsanalys, Region Dalarna"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+gg_fjarrvarme
