@@ -272,6 +272,33 @@ energi_df <- as.data.frame(px_data,
                            column.name.type = "text", 
                            variable.value.type = "text")
 
+#Förbered data
+energi_fornybart <- energi_df %>%
+  rename(
+    varde    = `Slutanvändning (MWh)`,
+    kategori = förbrukarkategori,
+    bransle  = bränsletyp,
+    ar       = år
+  ) %>%
+  filter(
+    !is.na(varde),
+    kategori == "totalt",   # rätt namn
+    bransle  != "totalt"
+  ) %>%
+  mutate(
+    #ar = as.numeric(ar),
+    fornybart = case_when(
+      str_detect(bransle, "förnybara") & !str_detect(bransle, "icke") ~ "Förnybart",
+      str_detect(bransle, "icke förnybara")                           ~ "Icke förnybart",
+      bransle == "fjärrvärme"                                         ~ "Fjärrvärme",
+      bransle == "el"                                                  ~ "El",
+      TRUE ~ bransle
+    ),
+    varde_twh = varde / 1000000
+  ) %>%
+  group_by(ar, fornybart) %>%
+  summarise(varde_twh = sum(varde_twh, na.rm = TRUE), .groups = "drop")
+
 
 # Hämta totaldata
 energi_total <- energi_df %>%
@@ -321,7 +348,7 @@ gg_energi <- energi_fornybart %>%
     caption  = "Källa: SCB, Kommunal och regional energistatistik\nBearbetning: Samhällsanalys, Region Dalarna"
   ) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 0))
 
 gg_energi
 
@@ -351,11 +378,7 @@ fjarrvarme_df <- as.data.frame(px_data_fj,
     varde      = `Fjärrvärmeproduktion och bränsleanvändning (MWh)`,
     bransle    = bränsletyp,
     ar         = år
-  ) %>%
-  mutate(ar = as.numeric(ar))
-
-head(fjarrvarme_df)
-unique(fjarrvarme_df$bransle)
+  ) 
 
 
 # Stapeldata - bränsleanvändning uppdelat på förnybart/icke förnybart
@@ -416,6 +439,6 @@ gg_fjarrvarme <- bransle_stapel %>%
     caption  = "Källa: SCB, Kommunal och regional energistatistik\nBearbetning: Samhällsanalys, Region Dalarna"
   ) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme(axis.text.x = element_text(angle = 0))
 
 gg_fjarrvarme

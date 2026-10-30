@@ -114,13 +114,9 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Introduktion
 
-Den här rapporten samlar redovisningar av läget för utvecklingen i Dalarna utifrån de olika områdesstrategier som utgör delstrategier till den samlade regionala utvecklingsstrategin ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf). 
+I den här rapporten samlar Region Dalarna redovisningar av läget för utvecklingen i Dalarna utifrån de olika områdesstrategier som utgör delstrategier till den samlade regionala utvecklingsstrategin ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf). 
 
-Följande strategier ingår:
-
-- Energi- och klimatstrategin
-- xxx
-- xx
+I denna första upplaga redovisas resultatet för energi- och klimatstrategin. Rapporten är under uppbyggnad.
 
 
 # Energi- och klimatstrategin
@@ -223,10 +219,11 @@ Energisystemet utgörs av tre delar; tillförsel, omvandling och användning av 
 
 Omställningen av energisystemet från fossila till fossilfria energikällor är avgörande för att nå klimatmålen och samtidigt stärka Dalarnas långsiktiga konkurrenskraft. Tillgången till fossilfri energi blir en allt viktigare faktor för näringslivets utveckling, inte minst när företag ska minska sina utsläpp, elektrifiera verksamheter och möta ökade krav från kunder, investerare och lagstiftning. Efterfrågan på fossilfri el och andra fossilfria energibärare ökar snabbt, och regioner som kan erbjuda en stabil och hållbar energiförsörjning har goda förutsättningar att attrahera investeringar, nyetableringar och innovation. Samtidigt behöver energianvändningen bli mer resurseffektiv för att den tillgängliga energin ska räcka till både omställning och fortsatt samhällsutveckling. Utvecklingen av såväl energiproduktion som energianvändning är därför central att följa i arbetet med energi- och klimatstrategin.
 
-*Här ska läggas till diagram över energitillförsel och användning.*
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_energi
 ```
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fjarrvarme
@@ -279,7 +276,7 @@ Mellan `r energieffektivitet_min_ar` och `r energieffektivitet_max_ar` ökade en
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_energieffektivitet$energieffektivitet_Dalarna
-```
+``` 
 
 I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre halvan av intervallet tillsammans med regioner som också är mer glest befolkade och har tunga industrier.
 
