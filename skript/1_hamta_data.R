@@ -341,7 +341,7 @@ gg_energi <- energi_fornybart %>%
   )) +
   labs(
     title    = "Slutanvändning av energi i Dalarna",
-    subtitle = "Fördelat på förnybart, icke förnybart, el och fjärrvärme. Streckad linje = total",
+    subtitle = "Fördelat på förnybart, icke förnybart, el och fjärrvärme. Punkter = total slutanvändning",
     x        = "År",
     y        = "TWh",
     fill     = NULL,
@@ -432,7 +432,7 @@ gg_fjarrvarme <- bransle_stapel %>%
   )) +
   labs(
     title    = "Fjärrvärmeproduktion och bränsleanvändning i Dalarna",
-    subtitle = "Staplar = bränsleanvändning, streckad linje = fjärrvärmeproduktion",
+    subtitle = "Staplar = bränsleanvändning, punkter = fjärrvärmeproduktion",
     x        = "År",
     y        = "TWh",
     fill     = NULL,
